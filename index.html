@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" ta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b39d5eccc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/mainstyle.css">
+    <link rel="stylesheet" href="./css/weetjes.css">
 
 
     <link rel="icon" href="img/logo.ico">
@@ -14,19 +15,35 @@
 </head>
 
 <body>
-    <nav class="nav">
-        <div class="logo">
-            <img class="logoimg" src="img/boekje.png">
-            <span class="logotekst">KnowItAll</span>
-        </div>
-        <div class="menu"></div>
-    </nav>
+    <div id="menu-button" class="menu-button">
+        <i id="open-menu" class="hamburger fas fa-bars visible"></i>
+        <i id="close-menu" class="hamburger fas fa-times"></i>
+    </div>
+    <div class="menubody" id="menubody">
+        <a class="menuLinks menuactive" href="#" id="top">Home</a>
+        <a class="menuLinks" href="#">Willekeurig weetje</a>
+        <a class="menuLinks" href="#">Profiel</a>
+        <a class="menuLinks" href="#">Weetje insturen</a>
+    </div>
+
+    <header class="header">
+        <img class="logoimg" src="img/boekje.png">
+        <span class="logotekst">KnowItAll</span>
+    </header>
+
 
     <main class="main">
-
-
+        <div class="weetje">
+            <h2 class="weetjedatum">14 februari 2005</h2>
+            <h3 class="weetjeintro">Op deze datum is het videoplatform YouTube uitgebracht</h3>
+        </div>
+        <div class="weetjeextra">
+            <h1 class="weetjetitle">Extra informatie</h1>
+            <p class="weetjetekst">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve Chen en Jawed Karim.
+                De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.</p>
+        </div>
     </main>
-
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,42 @@
+.weetje {
+    margin: 50px auto 0 auto;
+    border-radius: 50px;
+    width: 95vw;
+    height: 480px;
+    background-image: url(https://images.livemint.com/img/2020/04/23/600x338/youtube_1587665448629_1587665448994.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.weetjeextra {
+    margin: 50px auto 0 auto;
+    border-radius: 50px;
+    width: 95vw;
+    background-color: rgb(107, 174, 167);
+}
+
+.weetjetitle {
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.weetjetekst {
+    padding: 0px 40px 30px 40px;
+    font-size: .5em;
+}
+
+.weetjedatum {
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+    margin-bottom: 250px;
+    color: white;
+}
+
+.weetjeintro {
+    text-align: center;
+    font-size: .7em;
+    padding: 5px;
+    color: white;
+}
