@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+    font-size: 8rem;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #88BDBC;
+}
+
+
+/* Navigation */
+
+.nav {
+    background-color: #41B3A3;
+    height: 8vh;
+    width: 100vw;
+}
