@@ -30,7 +30,6 @@
     text-align: center;
     font-size: 1em;
     padding: 5px;
-    margin-bottom: 250px;
     color: white;
 }
 
@@ -38,5 +37,15 @@
     text-align: center;
     font-size: .7em;
     padding: 5px;
+    margin-top: 250px;
     color: white;
+}
+
+@media screen and (min-width: 800px) {
+    .weetje {
+        height: 800px;
+    }
+    .weetjeintro {
+        margin-top: 550px;
+    }
 }

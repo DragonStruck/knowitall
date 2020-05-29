@@ -38,13 +38,6 @@ header {
 
 /* Hamburger menu */
 
-.hamburger {
-    float: right;
-    margin-top: 30px;
-    margin-right: 30px;
-    position: absolute;
-}
-
 .menubody {
     opacity: 0;
     height: 100vh;
@@ -53,6 +46,10 @@ header {
     z-index: 5;
     position: absolute;
     transition: 0.5s;
+}
+
+.menuLinkContainer {
+    display: none;
 }
 
 .menubody a {
@@ -73,6 +70,7 @@ header {
 }
 
 .hamburger {
+    margin-top: 30px;
     position: absolute;
     opacity: 0;
     transition: all 0.2s ease;
@@ -84,8 +82,12 @@ header {
 }
 
 .menu-button {
-    position: relative;
-    height: 50px;
+    position: absolute;
     width: 50px;
     z-index: 8000;
+    right: 25px;
+}
+
+@media screen and (min-width: 800px) {
+    
 }
