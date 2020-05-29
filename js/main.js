@@ -8,18 +8,13 @@ let menuStatus = false;
 menuButton.addEventListener('click', () => {
     console.log(menuStatus);
     if (menuStatus == false) {
-        // closeMenu.classList.remove('visible');
-        // openMenu.classList.add('visible');
-        // menuBody.classList.add('change');
+
         document.getElementById("menuLinkContainer").style.display = "block";
         menuBody.classList.add('change');
         openMenu.classList.remove('visible');
         closeMenu.classList.add('visible');
         menuStatus = true;
     } else if (menuStatus == true) {
-        // openMenu.classList.remove('visible');
-        // closeMenu.classList.add('visible');
-        // menuButton.classList.remove('change');
 
         menuBody.classList.remove('change');
         closeMenu.classList.remove('visible');
@@ -29,3 +24,18 @@ menuButton.addEventListener('click', () => {
     }
 });
 
+function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}

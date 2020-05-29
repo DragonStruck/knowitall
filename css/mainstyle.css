@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    font-size: 4rem;
+    font-size: 1.8rem;
     font-family: sans-serif;
 }
 
@@ -16,23 +16,23 @@ body {
     background-color: #88BDBC;
 }
 
+
+/* Header */
+
 header {
     background-color: #41B3A3;
-    height: 125px;
+    height: 55px;
     width: 100vw;
 }
 
-
-/* Navigation */
-
 .logoimg {
-    margin: 10px;
-    width: 140px;
+    margin: 9px;
+    width: 55px;
 }
 
 .logotekst {
     position: absolute;
-    margin: 30px 0px;
+    margin: 15px 0px;
 }
 
 
@@ -48,20 +48,34 @@ header {
     transition: 0.5s;
 }
 
+.menu-button {
+    position: absolute;
+    width: 50px;
+    z-index: 8000;
+    right: 0;
+}
+
+.hamburger {
+    margin-top: 15px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
 .menuLinkContainer {
     display: none;
 }
 
 .menubody a {
     display: block;
-    padding: 50px 10px;
+    padding: 20px 10px;
     color: black;
     text-decoration: none;
     text-align: center;
 }
 
 #top {
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .change {
@@ -69,25 +83,42 @@ header {
     transition: opacity 1000ms;
 }
 
-.hamburger {
-    margin-top: 30px;
-    position: absolute;
-    opacity: 0;
-    transition: all 0.2s ease;
-}
-
 .visible {
     opacity: 1;
     transition: all 0.2s ease;
 }
 
-.menu-button {
-    position: absolute;
-    width: 50px;
-    z-index: 8000;
-    right: 25px;
+
+/* top bar menu */
+
+.topbarmenu {
+    display: none;
+    float: right;
+    margin: 25px 30px 0px 0px;
 }
 
-@media screen and (min-width: 800px) {
-    
+.topbarmenu a {
+    text-decoration: none;
+    margin: 0px 10px;
+    color: black;
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        height: 80px;
+    }
+    .logoimg {
+        width: 90px;
+    }
+    .logotekst {
+        font-size: 1.2em;
+        margin-top: 25px;
+    }
+    .menu-button {
+        display: none;
+    }
+    /* top bar menu */
+    .topbarmenu {
+        display: block;
+    }
 }
