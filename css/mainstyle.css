@@ -121,4 +121,7 @@ header {
     .topbarmenu {
         display: block;
     }
+    .menubody {
+        display: none;
+    }
 }

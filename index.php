@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/weetjes.css">
 
 
+
     <link rel="icon" href="img/logo.ico">
 
     <title>Know It All</title>
@@ -22,7 +23,7 @@
     </div>
     <div class="menubody" id="menubody">
         <div class="menuLinkContainer" id="menuLinkContainer">
-            <a class="menuLinks menuactive" href="index.html" id="top">Home</a>
+            <a class="menuLinks menuactive" href="index.php" id="top">Home</a>
             <a class="menuLinks" href="#">Willekeurig weetje</a>
             <a class="menuLinks" href="#">Profiel</a>
             <a class="menuLinks" href="#">Weetje insturen</a>
@@ -33,7 +34,7 @@
         <img class="logoimg" src="img/boekje.png">
         <span class="logotekst">KnowItAll</span>
         <div class="topbarmenu">
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="#">Willekeurig Weetje</a>
             <a href="#">Profiel</a>
         </div>
@@ -41,21 +42,10 @@
 
 
     <main class="main">
-        <div class="weetje">
-            <h2 class="weetjedatum">14 februari 2005</h2>
-            <h3 class="weetjeintro">Op deze datum is het videoplatform YouTube uitgebracht</h3>
-        </div>
-        <div class="weetjeextra">
-            <h1 class="weetjetitle">Extra informatie</h1>
-            <p class="weetjetekst">
-                <span id="dots"></span><span id="more">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve
-                    Chen en Jawed Karim.
-                    De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.
-                </span></p>
-            <button onclick="myFunction()" id="myBtn">Read more</button>
-            <!-- <p class="weetjetekst">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve Chen en Jawed Karim.
-                De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.</p> -->
-        </div>
+    <?php
+    include "db_connection.php";
+    openCon()
+    ?>
     </main>
     <script src="./js/main.js"></script>
 </body>
