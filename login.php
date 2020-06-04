@@ -42,11 +42,8 @@
 
 
 <main class="main">
-    <p class="title">Willekeurig weetje</p>
-    <?php
-    include "db_connection.php";
-    openRandomCon();
-    ?>
+    <p class="title">Login</p>
+
 </main>
 <script src="./js/main.js"></script>
 </body>
