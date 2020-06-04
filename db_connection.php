@@ -1,5 +1,4 @@
 
-
 <?php
 
 function OpenCon(){
@@ -14,7 +13,7 @@ function OpenCon(){
 
     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die ("Connect failed: %s\n". $conn -> error);
 
-    $query = "SELECT * FROM  weetje WHERE datum = CURRENT_DATE() LIMIT 1;";
+    $query = "SELECT * FROM weetje WHERE MONTH(datum) = MONTH(CURRENT_DATE) AND DAY(datum) = day(CURRENT_DATE) LIMIT 1";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
@@ -51,7 +50,7 @@ function OpenCon(){
             <p class="weetjetekst">
                 '.$row["extra"].'
                 </p>
-            <button onclick="myFunction()" id="myBtn">Read more</button>
+            
             <!-- <p class="weetjetekst">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve Chen en Jawed Karim.
                 De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.</p> -->
         </div>';
