@@ -44,7 +44,7 @@
     <main class="main">
     <?php
     include "db_connection.php";
-    openCon()
+    openCon();
     ?>
     </main>
     <script src="./js/main.js"></script>

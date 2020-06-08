@@ -22,11 +22,7 @@ function OpenCon(){
         </div>
         <div class="weetjeextra">
             <h1 class="weetjetitle">Extra informatie</h1>
-            <p class="weetjetekst">
-                '.$row["extra"].'
-                </p>
-            <!-- <p class="weetjetekst">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve Chen en Jawed Karim.
-                De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.</p> -->
+            <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
         }
     } else {
@@ -44,12 +40,7 @@ function OpenCon(){
         </div>
         <div class="weetjeextra">
             <h1 class="weetjetitle">Extra informatie</h1>
-            <p class="weetjetekst">
-                '.$row["extra"].'
-                </p>
-            
-            <!-- <p class="weetjetekst">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve Chen en Jawed Karim.
-                De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.</p> -->
+            <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
             }
         } else {
@@ -83,12 +74,7 @@ function OpenRandomCon(){
         </div>
         <div class="weetjeextra">
             <h1 class="weetjetitle">Extra informatie</h1>
-            <p class="weetjetekst">
-                '.$row["extra"].'
-                </p>
-            
-            <!-- <p class="weetjetekst">Youtube werd in februari 2005 opgericht door Chad Hurley, Steve Chen en Jawed Karim.
-                De eerste video op YouTube had de titel "Me at the zoo", waarin Karim een dierentuin bezoekt.</p> -->
+            <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
         }
     } else {
