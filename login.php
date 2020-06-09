@@ -40,10 +40,15 @@
     </div>
 </header>
 
-
 <main class="main">
-    <p class="title">Login</p>
 
+    <form class="loginform" action="login.php" method="post">
+        <p class="title">Login</p>
+        <input class="username" type="text" name="username" placeholder="Username">
+        <input class="password" type="password" name="password" placeholder="Password">
+        <input class="loginsubmit" type="submit" name="submit" value="Login">
+        <p class="nieuwacc">Nog geen account? <a href="login.php">Maak er een aan</a>!</p>
+    </form>
 </main>
 <script src="./js/main.js"></script>
 </body>
