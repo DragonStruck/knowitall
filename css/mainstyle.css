@@ -14,6 +14,7 @@ html {
 
 body {
     background-color: #88BDBC;
+    overflow-x: hidden;
 }
 
 
@@ -115,6 +116,7 @@ header {
 
     header {
         height: 80px;
+
     }
     .logoimg {
         width: 90px;
