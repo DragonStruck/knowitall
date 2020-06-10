@@ -35,7 +35,7 @@
         <div class="topbarmenu">
             <a href="index.php">Home</a>
             <a href="willekeurig.php">Willekeurig Weetje</a>
-            <a href="#">Profiel</a>
+            <a href="login.php">Profiel</a>
         </div>
     </header>
 
