@@ -132,6 +132,17 @@ header {
     margin: 10px auto;
     display: block;
     text-align: center;
+    border: 0;
+    border-radius: 5px;
+}
+
+.loginsubmit {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.loginsubmit:hover {
+    background-color: lightgray;
 }
 
 .nieuwacc {
