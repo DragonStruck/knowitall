@@ -26,7 +26,6 @@
         <a class="menuLinks" href="index.php" id="top">Home</a>
         <a class="menuLinks menuactive" href="willekeurig.php">Willekeurig weetje</a>
         <a class="menuLinks" href="#">Profiel</a>
-        <a class="menuLinks" href="#">Weetje insturen</a>
     </div>
 </div>
 
