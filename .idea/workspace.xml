@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bac8667-6ff4-4c39-b465-c03d74dcc958" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/mainstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mainstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/weetjes.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/weetjes.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
@@ -52,7 +52,7 @@
       <workItem from="1591271283202" duration="496000" />
       <workItem from="1591294839143" duration="196000" />
       <workItem from="1591690979580" duration="5518000" />
-      <workItem from="1591775579771" duration="976000" />
+      <workItem from="1591775579771" duration="2992000" />
     </task>
     <task id="LOCAL-00001" summary="Willekeurig.php aangemaakt en menu links toegevoegd">
       <created>1591264433923</created>

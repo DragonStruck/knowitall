@@ -40,6 +40,3 @@ kalenderButton.addEventListener('click', () => {
     }
 });
 
-function datehandler(e){
-    alert(e.target.value);
-}

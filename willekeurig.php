@@ -47,16 +47,18 @@
 <main class="main">
     <div class="dateselector" id="calenderbody">
         <form class="agenda">
-            <input type="date" onchange="datehandler(event);">
+            <input name="agenda" action="db_connection.php" type="date" onchange="this.form.submit()">
         </form>
     </div>
     <p class="title">Willekeurig weetje</p>
-
+    <div class="willekeuriguitleg" id="willekeuriguitleg">
+        <p>Gebruik de kalender bovenaan de pagina om een datum te kiezen...</p>
+        <p>Als er geen weetje voor die datum is wordt er een willekeurig weetje gekozen</p>
+    </div>
 
     <?php
     include "db_connection.php";
 //    openRandomCon();
-    openDateCon();
     ?>
 </main>
 <script src="./js/main.js"></script>
