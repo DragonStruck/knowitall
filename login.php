@@ -26,7 +26,6 @@
         <a class="menuLinks" href="index.php" id="top">Home</a>
         <a class="menuLinks menuactive" href="willekeurig.php">Willekeurig weetje</a>
         <a class="menuLinks" href="#">Profiel</a>
-        <a class="menuLinks" href="#">Weetje insturen</a>
     </div>
 </div>
 
@@ -40,10 +39,15 @@
     </div>
 </header>
 
-
 <main class="main">
-    <p class="title">Login</p>
 
+    <form class="loginform" action="login.php" method="post">
+        <p class="title">Login</p>
+        <input required class="username" type="text" name="username" placeholder="Username">
+        <input required class="password" type="password" name="password" placeholder="Password">
+        <input class="loginsubmit" type="submit" name="submit" value="Login">
+        <p class="nieuwacc">Nog geen account? <a href="login.php?=registreren">Maak er een aan</a>!</p>
+    </form>
 </main>
 <script src="./js/main.js"></script>
 </body>

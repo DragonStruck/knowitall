@@ -26,7 +26,6 @@
             <a class="menuLinks menuactive" href="index.php" id="top">Home</a>
             <a class="menuLinks" href="willekeurig.php">Willekeurig weetje</a>
             <a class="menuLinks" href="#">Profiel</a>
-            <a class="menuLinks" href="#">Weetje insturen</a>
         </div>
     </div>
 
@@ -36,7 +35,7 @@
         <div class="topbarmenu">
             <a href="index.php">Home</a>
             <a href="willekeurig.php">Willekeurig Weetje</a>
-            <a href="#">Profiel</a>
+            <a href="login.php">Profiel</a>
         </div>
     </header>
 

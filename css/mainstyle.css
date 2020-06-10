@@ -116,11 +116,54 @@ header {
     font-weight: bold;
 }
 
+/* login form */
+
+.loginform {
+    width: 80%;
+    margin: 50px auto 20px auto;
+    padding: 10px;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+    text-align: center;
+
+}
+
+.loginform .title {
+    margin: 15px 0px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.loginform input[type="text"],
+.loginform input[type="password"],
+.loginsubmit {
+    font-size: .7rem;
+    width: 95%;
+    height: 40px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+}
+
+.loginsubmit {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.loginsubmit:hover {
+    background-color: lightgray;
+}
+
+.nieuwacc {
+    font-size: .6rem;
+    margin: 20px auto;
+}
 
 @media only screen and (min-width: 768px) {
     .title {
         text-align: center;
-        color: white;
         font-size: 3rem;
         font-weight: bold;
     }
@@ -145,5 +188,17 @@ header {
     }
     .menubody {
         display: none;
+    }
+
+/*  login form  */
+
+    .loginform {
+        width: 400px;
+    }
+
+    .loginform input[type="text"],
+    .loginform input[type="password"],
+    .loginsubmit {
+        width: 80%;
     }
 }
