@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<i class="fa fa-calendar " id="calender" aria-hidden="true"></i>
 <div id="menu-button" class="menu-button">
     <i id="open-menu" class="hamburger fas fa-bars visible"></i>
     <i id="close-menu" class="hamburger fas fa-times"></i>
@@ -30,22 +31,33 @@
     </div>
 </div>
 
+
 <header class="header">
     <img class="logoimg" src="img/boekje.png">
     <span class="logotekst">KnowItAll</span>
+
     <div class="topbarmenu">
         <a href="index.php">Home</a>
         <a href="willekeurig.php">Willekeurig Weetje</a>
         <a href="#">Profiel</a>
     </div>
+
 </header>
 
 
 <main class="main">
+    <div class="dateselector" id="calenderbody">
+        <form class="agenda">
+            <input type="date" onchange="datehandler(event);">
+        </form>
+    </div>
     <p class="title">Willekeurig weetje</p>
+
+
     <?php
     include "db_connection.php";
-    openRandomCon();
+//    openRandomCon();
+    openDateCon();
     ?>
 </main>
 <script src="./js/main.js"></script>

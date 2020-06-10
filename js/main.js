@@ -24,18 +24,22 @@ menuButton.addEventListener('click', () => {
     }
 });
 
-function myFunction() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+const kalenderButton = document.querySelector('#calender');
+const kalenderBody = document.querySelector('#calenderbody');
 
-    if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Meer weergeven";
-        moreText.style.display = "none";
-    } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Minder weergeven";
-        moreText.style.display = "inline";
+let kalenderStatus = false;
+
+kalenderButton.addEventListener('click', () => {
+    console.log(kalenderStatus);
+    if (kalenderStatus == false) {
+        kalenderBody.style.display = 'block';
+        kalenderStatus = true;
+    } else if (kalenderStatus == true) {
+        kalenderBody.style.display = 'none';
+        kalenderStatus = false;
     }
+});
+
+function datehandler(e){
+    alert(e.target.value);
 }

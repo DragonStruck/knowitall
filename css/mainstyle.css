@@ -15,6 +15,11 @@ html {
 body {
     background-color: #88BDBC;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -103,6 +108,12 @@ header {
     text-decoration: none;
     margin: 0px 10px;
     color: black;
+}
+.title {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 
