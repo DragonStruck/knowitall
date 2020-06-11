@@ -1,6 +1,12 @@
 <?php
+include("db_connection.php");
+$melding = null;
+
 if (isset($_POST["action"])) {
     $action = $_POST["action"];
+
+
+
 
     switch ($action) {
         case "login":
@@ -9,9 +15,21 @@ if (isset($_POST["action"])) {
 
             break;
         case "registreren":
+            $username = htmlspecialchars($_POST["username"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $password = htmlspecialchars($_POST["password"]);
+            $password2 = htmlspecialchars($_POST["password2"]);
 
-//                hier komt de PHP om te registreren
 
+            if ($password == $password2) {
+                if (InsertUser($username, $email, $password)) {
+                    $melding = "<p>Account is aangemaakt</p>";
+                } else {
+                    $melding = "<p>Account aanmaken is mislukt</p>";
+                }
+            } else {
+                $melding = "<p>password is niet het zelfde</p>";
+            }
             break;
     }
 
@@ -103,6 +121,7 @@ DATA;
         <input type="hidden" name="action" value="<?=$postact?>">
         <input class="loginsubmit" type="submit" value="<?=$sbmtmsg?>">
         <?=$nga?>
+        <?=$melding?>
     </form>
 </main>
 <script src="./js/main.js"></script>

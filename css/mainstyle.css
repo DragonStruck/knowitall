@@ -132,6 +132,7 @@ header {
     margin: 15px 0px;
     font-size: 1.5rem;
     font-weight: bold;
+    color: black;
 }
 
 .loginform input[type="text"],

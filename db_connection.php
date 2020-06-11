@@ -1,14 +1,27 @@
-
 <?php
 
-function OpenCon(){
-
+function connect() {
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "";
     $db = "knowitall";
 
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die ("Connect failed: %s\n". $conn -> error);
+    static $conn = null;
+
+    if (!isset($conn)) {
+        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+    }
+
+    if ($conn->connect_error) {
+        die("Connection failed: $conn->connect_error");
+    }
+
+    return $conn;
+}
+
+
+function OpenCon(){
+    $conn = connect();
 
     $query = "SELECT * FROM weetje WHERE MONTH(datum) = MONTH(CURRENT_DATE) AND DAY(datum) = day(CURRENT_DATE) LIMIT 1";
     $result = $conn->query($query);
@@ -56,12 +69,7 @@ function CloseCon($conn) {
 
 
 function OpenRandomCon(){
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $db = "knowitall";
-
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die ("Connect failed: %s\n". $conn -> error);
+    $conn = connect();
 
     $query = "SELECT * FROM weetje ORDER BY RAND() LIMIT 1;";
     $result = $conn->query($query);
@@ -86,12 +94,7 @@ function OpenRandomCon(){
 }
 
 function OpenDateCon($kalenderdatum){
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $db = "knowitall";
-
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die ("Connect failed: %s\n". $conn -> error);
+    $conn = connect();
 
     $query = "SELECT * FROM weetje WHERE datum = '".$kalenderdatum."'";
     $result = $conn->query($query);
@@ -140,3 +143,17 @@ if (isset($_GET["agenda"])) {
 
 
 
+function InsertUser($username, $email, $password) {
+
+    $result = false;
+
+    $query = "INSERT INTO `gebruiker` (`ID`, `naam`, `e-mail`, `wachtwoord`, `datum`, `admin`) VALUES (NULL, ?, ?, ?, CURRENT_TIMESTAMP, '0');";
+    $conn = connect();
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("sss", $username, $email, $password);
+
+    if ($stmt->execute()) {
+        $result = true;
+    }
+    return $result;
+}
