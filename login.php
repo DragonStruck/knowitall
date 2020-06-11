@@ -1,10 +1,4 @@
 <?php
-
-var_dump($_GET);
-var_dump($_POST);
-
-
-
 if (isset($_POST["action"])) {
     $action = $_POST["action"];
 
