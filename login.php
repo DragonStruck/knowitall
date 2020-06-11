@@ -1,16 +1,22 @@
 <?php
 
+var_dump($_GET);
+var_dump($_POST);
+
+
+
 if (isset($_POST["action"])) {
     $action = $_POST["action"];
 
     switch ($action) {
         case "login":
 
-
+//                hier komt de PHP om in te loggen
 
             break;
         case "registreren":
 
+//                hier komt de PHP om te registreren
 
             break;
     }
@@ -27,6 +33,7 @@ $nga = <<< DATA
 
 DATA;
 $scndpass = null;
+$email = null;
 
 
 if (isset($_GET["action"])) {
@@ -42,6 +49,10 @@ DATA;
             $scndpass = <<< DATA
                 <input class="password" type="password" name="password2" placeholder="Retype Password">
 DATA;
+            $email = <<< DATA
+                <input class="email" type="email" name="email" placeholder="E-mail">
+DATA;
+
             break;
     }
 }
@@ -92,6 +103,7 @@ DATA;
     <form class="loginform" action="login.php" method="post">
         <p class="title"><?=$sbmtmsg?></p>
         <input class="username" type="text" name="username" placeholder="Username">
+        <?=$email?>
         <input class="password" type="password" name="password" placeholder="Password">
         <?=$scndpass?>
         <input type="hidden" name="action" value="<?=$postact?>">
