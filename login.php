@@ -1,3 +1,51 @@
+<?php
+
+if (isset($_POST["action"])) {
+    $action = $_POST["action"];
+
+    switch ($action) {
+        case "login":
+
+
+
+            break;
+        case "registreren":
+
+
+            break;
+    }
+
+}
+
+
+
+$sbmtmsg = "Login";
+$postact = "login";
+$nga = <<< DATA
+
+        <p class="nieuwacc">Nog geen account? <a href="login.php?action=registreren">Maak er een aan</a>!</p>
+
+DATA;
+$scndpass = null;
+
+
+if (isset($_GET["action"])) {
+    $action = $_GET["action"];
+
+    switch ($action) {
+        case "registreren":
+            $sbmtmsg = "Registreer";
+            $postact = "registreren";
+            $nga = <<< DATA
+                <p class="nieuwacc">Al een account? <a href="login.php">Log in</a>!</p>
+DATA;
+            $scndpass = <<< DATA
+                <input class="password" type="password" name="password2" placeholder="Retype Password">
+DATA;
+            break;
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -42,11 +90,13 @@
 <main class="main">
 
     <form class="loginform" action="login.php" method="post">
-        <p class="title">Login</p>
-        <input required class="username" type="text" name="username" placeholder="Username">
-        <input required class="password" type="password" name="password" placeholder="Password">
-        <input class="loginsubmit" type="submit" name="submit" value="Login">
-        <p class="nieuwacc">Nog geen account? <a href="login.php?=registreren">Maak er een aan</a>!</p>
+        <p class="title"><?=$sbmtmsg?></p>
+        <input class="username" type="text" name="username" placeholder="Username">
+        <input class="password" type="password" name="password" placeholder="Password">
+        <?=$scndpass?>
+        <input type="hidden" name="action" value="<?=$postact?>">
+        <input class="loginsubmit" type="submit" value="<?=$sbmtmsg?>">
+        <?=$nga?>
     </form>
 </main>
 <script src="./js/main.js"></script>
