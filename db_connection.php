@@ -150,10 +150,33 @@ function InsertUser($username, $email, $password) {
     $query = "INSERT INTO `gebruiker` (`ID`, `naam`, `e-mail`, `wachtwoord`, `datum`, `admin`) VALUES (NULL, ?, ?, ?, CURRENT_TIMESTAMP, '0');";
     $conn = connect();
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("sss", $username, $email, $password);
+
+    $hpw = password_hash($password,PASSWORD_DEFAULT);
+
+    $stmt->bind_param("sss", $username, $email, $hpw);
 
     if ($stmt->execute()) {
         $result = true;
+    }
+    return $result;
+}
+
+function CheckUser($username, $password) {
+    $result = false;
+    $hashedPassword = null;
+
+    $query = "SELECT `wachtwoord` FROM `gebruiker` WHERE `naam` = ?;";
+    $conn = connect();
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $username);
+
+    if ($stmt->execute()) {
+        $stmt->bind_result($hashedPassword);
+        if ($stmt->fetch()) {
+            if (password_verify($password,$hashedPassword)) {
+                $result = true;
+            }
+        }
     }
     return $result;
 }

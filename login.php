@@ -4,22 +4,22 @@ $melding = null;
 
 if (isset($_POST["action"])) {
     $action = $_POST["action"];
-
-
+    $username = htmlspecialchars($_POST["username"]);
+    $password = htmlspecialchars($_POST["password"]);
 
 
     switch ($action) {
         case "login":
-
-//                hier komt de PHP om in te loggen
+            if (CheckUser($username, $password)) {
+                $melding = "<p>U bent nu ingelogd</p>";
+            } else {
+                $melding = "<p>Inloggen mislukt</p>";
+            }
 
             break;
         case "registreren":
-            $username = htmlspecialchars($_POST["username"]);
             $email = htmlspecialchars($_POST["email"]);
-            $password = htmlspecialchars($_POST["password"]);
             $password2 = htmlspecialchars($_POST["password2"]);
-
 
             if ($password == $password2) {
                 if (InsertUser($username, $email, $password)) {
@@ -32,7 +32,6 @@ if (isset($_POST["action"])) {
             }
             break;
     }
-
 }
 
 
