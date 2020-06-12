@@ -11,7 +11,9 @@ if (isset($_POST["action"])) {
     switch ($action) {
         case "login":
             if (CheckUser($username, $password)) {
-                $melding = "<p>U bent nu ingelogd</p>";
+                session_start();
+                $_SESSION["isIngelogd"] = session_id();
+                header("location: profiel.php");
             } else {
                 $melding = "<p>Inloggen mislukt</p>";
             }
@@ -95,7 +97,7 @@ DATA;
     <div class="menuLinkContainer" id="menuLinkContainer">
         <a class="menuLinks" href="index.php" id="top">Home</a>
         <a class="menuLinks menuactive" href="willekeurig.php">Willekeurig weetje</a>
-        <a class="menuLinks" href="#">Profiel</a>
+        <a class="menuLinks" href="profiel.php">Profiel</a>
     </div>
 </div>
 
@@ -105,7 +107,7 @@ DATA;
     <div class="topbarmenu">
         <a href="index.php">Home</a>
         <a href="willekeurig.php">Willekeurig Weetje</a>
-        <a href="#">Profiel</a>
+        <a href="profiel.php">Profiel</a>
     </div>
 </header>
 
