@@ -12,7 +12,10 @@ if (isset($_POST["action"])) {
         case "login":
             if (CheckUser($username, $password)) {
                 session_start();
-                $_SESSION["isIngelogd"] = session_id();
+                if (!$_SESSION) {
+                    $_SESSION["isIngelogd"] = session_id();
+                    header("location: profiel.php");
+                }
                 header("location: profiel.php");
             } else {
                 $melding = "<p>Inloggen mislukt</p>";

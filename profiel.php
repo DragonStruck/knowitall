@@ -1,12 +1,10 @@
 <?php
+session_start();
 if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
-    $result = "yee";
+
 } else {
     header("location: login.php");
 }
-
-
-
 
 ?>
 
@@ -53,11 +51,6 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 
 
     <main class="main">
-
-        <?=$result?>
-
-
-
     </main>
     <script src="./js/main.js"></script>
 </body>
