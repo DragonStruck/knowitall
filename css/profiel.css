@@ -1,0 +1,81 @@
+
+/*DE TEKST MOET NOG STYLING KRIJGEN ENZO*/
+/*Forms Styling*/
+.middle {
+    margin-left: auto;
+    margin-right: auto;
+}
+.userinfo {
+    width: 90vw;
+    height: 15vh;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.sendweetjes {
+    margin-top: 20px;
+}
+.sendweetjestitle {
+    width: 90vw;
+    height: 6vh;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+
+
+}
+.sendweetjesmain {
+    width: 90vw;
+    height: 60vh;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.userinfomobile {
+    display: block;
+}
+.userinfodesktop {
+    display: none   ;
+}
+.profielrechts {
+    display: none;
+}
+@media only screen and (min-width: 768px) {
+
+
+    .userinfo {
+        width: 40vw;
+        padding: 10px;
+    }
+
+    .userinfomobile {
+        display: none;
+    }
+    .userinfodesktop {
+        display: block;
+    }
+
+    .sendweetjestitle {
+        width: 40vw;
+        padding: 10px;
+    }
+    .sendweetjesmain {
+        width: 40vw;
+        padding: 10px;
+    }
+
+    .weetjeinsturen {
+        width: 30vw;
+        height: 85vh;
+        background-color: rgb(65, 179, 164);
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .profielrechts {
+        display: block;
+    }
+}

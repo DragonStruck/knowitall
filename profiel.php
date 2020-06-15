@@ -18,6 +18,7 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
     <script src="https://kit.fontawesome.com/b39d5eccc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/mainstyle.css">
     <link rel="stylesheet" href="./css/weetjes.css">
+    <link rel="stylesheet" href="./css/profiel.css">
 
 
 
@@ -51,13 +52,37 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 
 
     <main class="main">
-        <div class="userinfo">userinfo</div>
-        <div class="sendweetjes">
-            <div class="sendweetjestitle"><p>Ingestuurde weetjes</p></div>
-            <div class="sendweetjesmain">
-                ......
+        <div class="profiellinks">
+            <div class="userinfo middle">
+                <div class="userinfomobile">
+                    <p>Name</p>
+                    <p>Weetjes:</p>
+                </div>
+                <div class="userinfodesktop">
+                    <p>Naam:</p>
+                    <p>E-mail:</p>
+                    <p>Goedgekeurde weetjes:</p>
+                </div>
+
+            </div>
+            <div class="sendweetjes">
+                <div class="sendweetjestitle middle"><p>Ingestuurde weetjes</p></div>
+                <div class="sendweetjesmain middle">
+                    ......
+                </div>
             </div>
         </div>
+        <div class="profielrechts">
+            <div class="weetjeinsturen">
+                <form action="" method="post">
+                    <label>Datum:</label><input name="datum" type="date">
+                    <textarea name="weetje" placeholder="Vul hier je weetje in"></textarea>
+                    <textarea name="weetjeextra" placeholder="Vul hier extra informatie in"></textarea>
+
+                </form>
+            </div>
+        </div>
+
     </main>
     <script src="./js/main.js"></script>
 </body>
