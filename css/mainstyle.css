@@ -29,6 +29,8 @@ header {
     background-color: #41B3A3;
     height: 55px;
     width: 100vw;
+    z-index: 10;
+    position: relative;
 }
 
 .logoimg {
@@ -112,7 +114,8 @@ header {
 .title {
     text-align: center;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-top: 15px;
     font-weight: bold;
 }
 

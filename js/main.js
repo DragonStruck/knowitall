@@ -32,11 +32,16 @@ let kalenderStatus = false;
 kalenderButton.addEventListener('click', () => {
     console.log(kalenderStatus);
     if (kalenderStatus == false) {
-        kalenderBody.style.display = 'block';
+        kalenderBody.classList.remove('addtop')
+        // kalenderBody.style.display = 'block';
+        kalenderBody.style.opacity = 1;
         kalenderStatus = true;
     } else if (kalenderStatus == true) {
-        kalenderBody.style.display = 'none';
+
+        // kalenderBody.style.display = 'none';
+        kalenderBody.style.opacity = 0;
         kalenderStatus = false;
     }
 });
+
 

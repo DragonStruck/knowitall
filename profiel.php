@@ -51,6 +51,13 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 
 
     <main class="main">
+        <div class="userinfo">userinfo</div>
+        <div class="sendweetjes">
+            <div class="sendweetjestitle"><p>Ingestuurde weetjes</p></div>
+            <div class="sendweetjesmain">
+                ......
+            </div>
+        </div>
     </main>
     <script src="./js/main.js"></script>
 </body>
