@@ -4,7 +4,6 @@
     border-radius: 20px;
     width: 95vw;
     height: 200px;
-    background-image: url(https://i.ytimg.com/vi/A8AlbaDmaec/maxresdefault.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -101,6 +100,7 @@
         height: 5vh;
         right: 0;
         position: absolute;
+
     }
     .willekeuriguitleg {
         margin-top: 20px;

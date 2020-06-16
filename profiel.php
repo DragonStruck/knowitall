@@ -5,6 +5,65 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 } else {
     header("location: login.php");
 }
+if(isset($_POST['verzenden'])) {
+
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "knowitall";
+    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+
+
+    $datum = htmlspecialchars($_POST["datum"]);
+    $weetje = htmlspecialchars($_POST["weetje"]);
+    $weetjeextra = htmlspecialchars($_POST["weetjeextra"]);
+
+//    Afbeelding
+    $image = $_FILES['image']['name'];
+    $target = "weetjeimg/".basename($image);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($image,PATHINFO_EXTENSION));
+
+//    Kijken of het een afbeelding is
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
+    // Als bestand te groot is
+    if ($_FILES["image"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    // Formaat
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded."; } else {
+        $sql = "INSERT INTO weetje (datum, titel, weetje, extra, afbeelding, status, gebruiker) VALUES ('$datum','placeholder','$weetje','$weetjeextra','$image','goedgekeurd','Milan')";
+
+        $conn->query($sql);
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+            echo "image uploaded succesfully";
+        } else {
+            echo "failed";
+        }
+    }
+
+
+}
+
+
+
+
+
 
 ?>
 
@@ -74,11 +133,20 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
         </div>
         <div class="profielrechts">
             <div class="weetjeinsturen">
-                <form action="" method="post">
-                    <label>Datum:</label><input name="datum" type="date">
-                    <textarea name="weetje" placeholder="Vul hier je weetje in"></textarea>
-                    <textarea name="weetjeextra" placeholder="Vul hier extra informatie in"></textarea>
+                <form action="profiel.php" method="post" enctype="multipart/form-data">
+                    <p style="text-align: center; font-size: 1.2em">Weetje insturen</p>
+                    <label>Datum: </label><input class="submitform" name="datum" type="date">
+                    <textarea class="textareamedium" name="weetje" placeholder="Vul hier je weetje in"></textarea>
+                    <textarea class="textarealarge" name="weetjeextra" placeholder="Vul hier extra informatie in"></textarea>
 
+                    <label class="afbeeldingubtton">
+                        <label >Kies afbeelding: </label>
+                        <input type="file" name="image" style="display: none;">
+                        <a style="font-size: .8em; border: 1px solid black; padding: 2px">Bladeren</a>
+                    </label>
+
+                    <input type="submit" class="voorbeeldbutton" name="voorbeeld" value="Voorbeeld">
+                    <input type="submit" class="submitbutton" name="verzenden">
                 </form>
             </div>
         </div>

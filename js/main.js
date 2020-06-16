@@ -39,9 +39,17 @@ kalenderButton.addEventListener('click', () => {
     } else if (kalenderStatus == true) {
 
         // kalenderBody.style.display = 'none';
+        kalenderBody.classList.add('addtop')
         kalenderBody.style.opacity = 0;
         kalenderStatus = false;
     }
 });
+// function changeBackground(variable) {
+//     let img = variable;
+//     console.log(img);
+//
+//     const weetjePicca = document.querySelector('.weetje');
+//     weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
+// }
 
 

@@ -7,7 +7,7 @@
 }
 .userinfo {
     width: 90vw;
-    height: 15vh;
+    height: 125px;
     background-color: rgb(65, 179, 164);
     border-radius: 15px;
     margin-top: 10px;
@@ -17,7 +17,7 @@
 }
 .sendweetjestitle {
     width: 90vw;
-    height: 6vh;
+    height: 55px;
     background-color: rgb(65, 179, 164);
     border-radius: 15px;
 
@@ -25,7 +25,7 @@
 }
 .sendweetjesmain {
     width: 90vw;
-    height: 60vh;
+    height: 50vh;
     background-color: rgb(65, 179, 164);
     border-radius: 15px;
     margin-top: 10px;
@@ -61,14 +61,16 @@
     .sendweetjesmain {
         width: 40vw;
         padding: 10px;
+        height: 600px;
     }
 
     .weetjeinsturen {
-        width: 30vw;
-        height: 85vh;
+        width: 25vw;
+        height: 810px;
         background-color: rgb(65, 179, 164);
         border-radius: 15px;
         margin-top: 10px;
+        padding: 10px;
     }
     .main {
         display: flex;
@@ -77,5 +79,36 @@
     }
     .profielrechts {
         display: block;
+    }
+
+    .textareamedium, .textarealarge {
+        font-size: .7rem;
+        width: 95%;
+        height: 80px;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+        border: 0;
+        border-radius: 5px;
+    }
+    .textarealarge {
+        height: 400px;
+    }
+    .voorbeeldbutton, .submitbutton {
+        width: 95%;
+        height: auto;
+        background-color: white;
+        border-radius: 5px;
+        margin: 10px auto;
+        text-align: center;
+        padding: 10px;
+        border: none;
+    }
+    .submitbutton {
+        width: 70%;
+    }
+    .afbeeldingubtton {
+        position: relative;
+
     }
 }

@@ -1,3 +1,15 @@
+<script>
+    function changeBackground(variable) {
+        let img = variable;
+        console.log(img);
+
+        const weetjePicca = document.querySelector('.weetje');
+        weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
+    }
+
+</script>
+
+
 <?php
 
 function connect() {
@@ -42,6 +54,7 @@ function OpenCon(){
             <h1 class="weetjetitle">Extra informatie</h1>
             <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
+                echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
         }
     } else {
 
@@ -60,6 +73,7 @@ function OpenCon(){
             <h1 class="weetjetitle">Extra informatie</h1>
             <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
+                echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
             }
         } else {
             echo "Geen resultaten";
@@ -91,6 +105,7 @@ function OpenRandomCon(){
             <h1 class="weetjetitle">Extra informatie</h1>
             <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
+            echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
         }
     } else {
         echo "Geen resultaten";
@@ -117,6 +132,7 @@ function OpenDateCon($kalenderdatum){
             <h1 class="weetjetitle">Extra informatie</h1>
             <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
+            echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
         }
     } else {
         $query = "SELECT * FROM weetje ORDER BY RAND() LIMIT 1;";
@@ -134,6 +150,8 @@ function OpenDateCon($kalenderdatum){
             <h1 class="weetjetitle">Extra informatie</h1>
             <p class="weetjetekst">'.$row["extra"].'</p>
         </div>';
+                echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
+
             }
         } else {
             echo "Geen resultaten";
