@@ -45,5 +45,20 @@ kalenderButton.addEventListener('click', () => {
     }
 });
 
+const formButton = document.querySelector('#upload');
+const formBody = document.querySelector('#formbody');
+
+let formStatus = false;
+
+formButton.addEventListener('click', () => {
+    console.log("sdfw");
+    if (formStatus == false) {
+        formBody.classList.add('mobileform')
+        formStatus = true;
+    } else if (formStatus == true) {
+        formBody.classList.remove('mobileform')
+        formStatus = false;
+    }
+});
 
 

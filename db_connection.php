@@ -1,13 +1,4 @@
-<script>
-    function changeBackground(variable) {
-        let img = variable;
-        console.log(img);
 
-        const weetjePicca = document.querySelector('.weetje');
-        weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
-    }
-
-</script>
 
 
 <?php
@@ -203,3 +194,14 @@ function CheckUser($username, $password) {
     }
     return $result;
 }
+?>
+<script>
+    function changeBackground(variable) {
+        let img = variable;
+        console.log(img);
+
+        const weetjePicca = document.querySelector('.weetje');
+        weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
+    }
+
+</script>

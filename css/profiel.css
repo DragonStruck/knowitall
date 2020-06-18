@@ -7,19 +7,23 @@
 }
 .userinfo {
     width: 90vw;
-    height: 125px;
+    height: auto;
     background-color: rgb(65, 179, 164);
     border-radius: 15px;
     margin-top: 10px;
+    padding: 10px;
+    text-align: center;
 }
 .sendweetjes {
     margin-top: 20px;
 }
 .sendweetjestitle {
     width: 90vw;
-    height: 55px;
+    height: auto;
     background-color: rgb(65, 179, 164);
     border-radius: 15px;
+    padding: 10px;
+    text-align: center;
 
 
 }
@@ -67,17 +71,81 @@
     grid-column: 1/99;
     grid-row: 2;
 }
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .sendweetjesbutton {
-    padding: 2px;
-    border: 1px solid black;
-    width: auto;
-    text-align: center;
-    grid-column: 100 / 100;
-    grid-row: 5;
+    display: none;
+}
+.fa-upload {
+    position: absolute;
+    width: 50px;
+    z-index: 8000;
+    right: 40px;
+    top: 13px;
 }
 
-@media only screen and (min-width: 768px) {
+.weetjeinsturen {
+    width: 25vw;
+    height: 810px;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 10px;
+}
 
+.textareamedium, .textarealarge {
+    font-size: .7rem;
+    width: 95%;
+    height: 80px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+}
+.textarealarge {
+    height: 400px;
+}
+.voorbeeldbutton, .submitbutton {
+    width: 95%;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    border: none;
+}
+.submitbutton {
+    width: 70%;
+}
+.afbeeldingubtton {
+    position: relative;
+
+}
+.mobileform {
+    display: block;
+    position: absolute;
+    width: 100vw;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .fa-upload {
+        display: none;
+    }
+    .sendweetjesbutton {
+        padding: 2px;
+        border: 1px solid black;
+        width: auto;
+        text-align: center;
+        grid-column: 100 / 100;
+        grid-row: 5;
+    }
 
     .userinfo {
         width: 40vw;
@@ -107,6 +175,11 @@
         display: flex;
         flex-direction: column;
     }
+
+
+    .profielrechts {
+        display: block;
+    }
     .weetjeinsturen {
         width: 25vw;
         height: 810px;
@@ -114,14 +187,6 @@
         border-radius: 15px;
         margin-top: 10px;
         padding: 10px;
-    }
-    .main {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    .profielrechts {
-        display: block;
     }
 
     .textareamedium, .textarealarge {

@@ -7,16 +7,13 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 }
 $username = $_SESSION["username"];
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$db = "knowitall";
 
 //    $dbhost = "localhost";
 //    $dbuser = "student4a9_544194";
 //    $dbpass = "DjWzUE";
 //    $db = "student4a9_544194";
-$conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+include "db_connection.php";
+$conn = connect();
 if(isset($_POST['verzenden'])) {
 
 
@@ -126,6 +123,7 @@ function ingestuurdeWeetjes()
 </head>
 
 <body>
+<i class="fa fa-upload " id="upload" aria-hidden="true"></i>
     <div id="menu-button" class="menu-button">
         <i id="open-menu" class="hamburger fas fa-bars visible"></i>
         <i id="close-menu" class="hamburger fas fa-times"></i>
@@ -157,8 +155,8 @@ function ingestuurdeWeetjes()
         <div class="profiellinks">
             <div class="userinfo middle">
                 <div class="userinfomobile">
-                    <p><?php echo $username ?></p>
-                    <p>Weetjes: <?php $sql3 = "SELECT COUNT(weetje) AS 'aantal' FROM weetje WHERE gebruiker = '$username'";
+                    <p><?php echo "Welkom ". $username . "!" ?></p>
+                    <p>Weetjes: <?php $sql3 = "SELECT COUNT(weetje) AS 'aantal' FROM weetje WHERE gebruiker = '$username' AND status = 'goedgekeurd'";
                         $result3 = $conn->query($sql3);
                         while($row = $result3->fetch_assoc()) {
                             echo $row["aantal"];
@@ -192,7 +190,7 @@ function ingestuurdeWeetjes()
                 </div>
             </div>
         </div>
-        <div class="profielrechts">
+        <div class="profielrechts" id="formbody">
             <div class="weetjeinsturen">
                 <form action="profiel.php" method="post" enctype="multipart/form-data">
                     <p style="text-align: center; font-size: 1.2em">Weetje insturen</p>

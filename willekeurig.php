@@ -43,7 +43,7 @@
 
 </header>
 
-<div class="dateselector" id="calenderbody">
+<div class="dateselector addtop" id="calenderbody" >
     <form class="agenda">
         <input name="agenda" action="db_connection.php" type="date" onchange="this.form.submit()">
     </form>
