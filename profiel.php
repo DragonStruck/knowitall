@@ -72,16 +72,12 @@ if(isset($_POST['verzenden'])) {
 //Ingestuurde weetjes
 function ingestuurdeWeetjes()
 {
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $db = "knowitall";
 
 //    $dbhost = "localhost";
 //    $dbuser = "student4a9_544194";
 //    $dbpass = "DjWzUE";
 //    $db = "student4a9_544194";
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+    $conn = connect();
     $username = $_SESSION["username"];
     $sql3 = "SELECT * FROM `weetje` WHERE gebruiker = '$username' ORDER BY ID DESC LIMIT 4";
     $result3 = $conn->query($sql3);
