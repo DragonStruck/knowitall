@@ -17,7 +17,7 @@ function connect() {
     $dbuser = "root";
     $dbpass = "";
     $db = "knowitall";
-
+//
 //    $dbhost = "localhost";
 //    $dbuser = "student4a9_544194";
 //    $dbpass = "DjWzUE";
@@ -40,7 +40,7 @@ function connect() {
 function OpenCon(){
     $conn = connect();
 
-    $query = "SELECT * FROM weetje WHERE MONTH(datum) = MONTH(CURRENT_DATE) AND DAY(datum) = day(CURRENT_DATE) LIMIT 1";
+    $query = "SELECT * FROM weetje WHERE MONTH(datum) = MONTH(CURRENT_DATE) AND DAY(datum) = day(CURRENT_DATE) AND status = 'goedgekeurd' ORDER BY RAND() LIMIT 1";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
@@ -59,7 +59,7 @@ function OpenCon(){
     } else {
 
 
-        $query = "SELECT * FROM weetje ORDER BY RAND() LIMIT 1;";
+        $query = "SELECT * FROM weetje WHERE status = 'goedgekeurd' ORDER BY RAND() LIMIT 1;";
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {
@@ -90,7 +90,7 @@ function CloseCon($conn) {
 function OpenRandomCon(){
     $conn = connect();
 
-    $query = "SELECT * FROM weetje ORDER BY RAND() LIMIT 1;";
+    $query = "SELECT * FROM weetje WHERE status = 'goedgekeurd' ORDER BY RAND() LIMIT 1;";
     $result = $conn->query($query);
 
 
@@ -116,7 +116,7 @@ function OpenRandomCon(){
 function OpenDateCon($kalenderdatum){
     $conn = connect();
 
-    $query = "SELECT * FROM weetje WHERE datum = '".$kalenderdatum."'";
+    $query = "SELECT * FROM weetje WHERE datum = '".$kalenderdatum."' AND status = 'goedgekeurd' ORDER BY RAND() LIMIT 1";
     $result = $conn->query($query);
 
 
@@ -135,7 +135,7 @@ function OpenDateCon($kalenderdatum){
             echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
         }
     } else {
-        $query = "SELECT * FROM weetje ORDER BY RAND() LIMIT 1;";
+        $query = "SELECT * FROM weetje WHERE status = 'goedgekeurd' ORDER BY RAND() LIMIT 1;";
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {

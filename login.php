@@ -13,6 +13,7 @@ if (isset($_POST["action"])) {
             if (CheckUser($username, $password)) {
                 session_start();
                 if (!$_SESSION) {
+                    $_SESSION["username"] = $username;
                     $_SESSION["isIngelogd"] = session_id();
                     header("location: profiel.php");
                 }
@@ -105,7 +106,7 @@ DATA;
 </div>
 
 <header class="header">
-    <img class="logoimg" src="img/boekje.png">
+    <a href="index.php"><img class="logoimg" src="img/boekje.png"></a>
     <span class="logotekst">KnowItAll</span>
     <div class="topbarmenu">
         <a href="index.php">Home</a>

@@ -25,7 +25,7 @@
 }
 .sendweetjesmain {
     width: 90vw;
-    height: 50vh;
+    height: auto;
     background-color: rgb(65, 179, 164);
     border-radius: 15px;
     margin-top: 10px;
@@ -39,11 +39,49 @@
 .profielrechts {
     display: none;
 }
+.informationbody {
+    font-size: .7rem;
+    width: 95%;
+    height: 125px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    display: inline-grid;
+    grid-template-rows: auto auto 1fr;
+}
+.weetjecontainer {
+    display: flex;
+    flex-direction: row;
+}
+.sendweetjesdatum {
+    font-size: 1rem;
+    grid-column: 1/100;
+}
+.sendweetjesstatus {
+    grid-column: 100/100;
+    grid-row: 1;
+}
+.sendweetjesweetje {
+    grid-column: 1/99;
+    grid-row: 2;
+}
+.sendweetjesbutton {
+    padding: 2px;
+    border: 1px solid black;
+    width: auto;
+    text-align: center;
+    grid-column: 100 / 100;
+    grid-row: 5;
+}
+
 @media only screen and (min-width: 768px) {
 
 
     .userinfo {
         width: 40vw;
+        height: auto;
         padding: 10px;
     }
 
@@ -62,8 +100,13 @@
         width: 40vw;
         padding: 10px;
         height: 600px;
-    }
 
+
+    }
+    .sendweetjesmaindp {
+        display: flex;
+        flex-direction: column;
+    }
     .weetjeinsturen {
         width: 25vw;
         height: 810px;
@@ -110,5 +153,20 @@
     .afbeeldingubtton {
         position: relative;
 
+    }
+
+
+    .weetjevoorbeeld {
+        width: 90%;
+        height: 800px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: white;
+        z-index: 100;
+        border-radius: 15px;
     }
 }

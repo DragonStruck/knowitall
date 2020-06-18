@@ -32,7 +32,7 @@
 
 
 <header class="header">
-    <img class="logoimg" src="img/boekje.png">
+    <a href="index.php"><img class="logoimg" src="img/boekje.png"></a>
     <span class="logotekst">KnowItAll</span>
 
     <div class="topbarmenu">

@@ -5,13 +5,23 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 } else {
     header("location: login.php");
 }
+$username = $_SESSION["username"];
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$db = "knowitall";
+
+//    $dbhost = "localhost";
+//    $dbuser = "student4a9_544194";
+//    $dbpass = "DjWzUE";
+//    $db = "student4a9_544194";
+$conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
 if(isset($_POST['verzenden'])) {
 
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $db = "knowitall";
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+
+
+
 
 
     $datum = htmlspecialchars($_POST["datum"]);
@@ -19,47 +29,76 @@ if(isset($_POST['verzenden'])) {
     $weetjeextra = htmlspecialchars($_POST["weetjeextra"]);
 
 //    Afbeelding
+
+
     $image = $_FILES['image']['name'];
-    $target = "weetjeimg/".basename($image);
-    $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($image,PATHINFO_EXTENSION));
+    $filename = rand(0, 10000).".".$imageFileType;
+    $target = "weetjeimg/".$filename;
+    $uploadOk = 1;
+
 
 //    Kijken of het een afbeelding is
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo "<script>alert('Het bestand is geen afbeelding')</script>";
         $uploadOk = 0;
     }
-
     // Als bestand te groot is
     if ($_FILES["image"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+        echo "<script>alert('Het bestand is te groot')</script>";
         $uploadOk = 0;
     }
     // Formaat
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        echo "<script>alert('Verboden file type')</script>";
         $uploadOk = 0;
     }
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded."; } else {
-        $sql = "INSERT INTO weetje (datum, titel, weetje, extra, afbeelding, status, gebruiker) VALUES ('$datum','placeholder','$weetje','$weetjeextra','$image','goedgekeurd','Milan')";
+        } else {
+        $sql = "INSERT INTO weetje (datum, titel, weetje, extra, afbeelding, status, gebruiker) VALUES ('$datum','placeholder','$weetje','$weetjeextra','$filename','ongekeurd','$username')";
 
         $conn->query($sql);
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-            echo "image uploaded succesfully";
+            echo "<script>alert('Weetje ingestuurd')</script>";
         } else {
-            echo "failed";
+            echo "<script>alert('Weetje is niet ingestuurd')</script>";
         }
     }
 
 
 }
 
+
+//Ingestuurde weetjes
+function ingestuurdeWeetjes()
+{
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "knowitall";
+
+//    $dbhost = "localhost";
+//    $dbuser = "student4a9_544194";
+//    $dbpass = "DjWzUE";
+//    $db = "student4a9_544194";
+    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+    $username = $_SESSION["username"];
+    $sql3 = "SELECT * FROM `weetje` WHERE gebruiker = '$username' ORDER BY ID DESC LIMIT 4";
+    $result3 = $conn->query($sql3);
+    while ($row = $result3->fetch_assoc()) {
+        echo '<div class="weetjecontainer">
+                            <div class="informationbody">
+                                <p class="sendweetjesdatum">' . $row["datum"] . '</p>
+                                <p class="sendweetjesweetje">'.$row["weetje"].'</p>
+                                <p class="sendweetjesstatus">'.$row["status"].'</p>
+                                <span class="sendweetjesbutton ">Voorbeeld</span>
+                            </div>
+                        </div>';
+    }
+}
 
 
 
@@ -100,7 +139,7 @@ if(isset($_POST['verzenden'])) {
     </div>
 
     <header class="header">
-        <img class="logoimg" src="img/boekje.png">
+        <a href="index.php"><img class="logoimg" src="img/boekje.png"></a>
         <span class="logotekst">KnowItAll</span>
         <div class="topbarmenu">
             <a href="index.php">Home</a>
@@ -109,25 +148,47 @@ if(isset($_POST['verzenden'])) {
         </div>
     </header>
 
-
+<!--    <div class="weetjevoorbeeld middle">-->
+<!--        --><?php
+//        include "db_connection.php";
+//        OpenCon(); ?>
+<!--    </div>-->
     <main class="main">
         <div class="profiellinks">
             <div class="userinfo middle">
                 <div class="userinfomobile">
-                    <p>Name</p>
-                    <p>Weetjes:</p>
+                    <p><?php echo $username ?></p>
+                    <p>Weetjes: <?php $sql3 = "SELECT COUNT(weetje) AS 'aantal' FROM weetje WHERE gebruiker = '$username'";
+                        $result3 = $conn->query($sql3);
+                        while($row = $result3->fetch_assoc()) {
+                            echo $row["aantal"];
+                        }?></p>
                 </div>
                 <div class="userinfodesktop">
-                    <p>Naam:</p>
-                    <p>E-mail:</p>
-                    <p>Goedgekeurde weetjes:</p>
+                    <p>Naam: <?php echo $username ?></p>
+                    <p>E-mail: <?php $sql3 = "SELECT `naam`,`e-mail` from gebruiker WHERE naam = '$username'";
+                        $result3 = $conn->query($sql3);
+                        while($row = $result3->fetch_assoc()) {
+                            echo $row["e-mail"];
+                        }?></p>
+                    <p>Goedgekeurde weetjes: <?php $sql3 = "SELECT COUNT(weetje) AS 'aantal' FROM weetje WHERE gebruiker = '$username' AND status = 'goedgekeurd'";
+                        $result3 = $conn->query($sql3);
+                        while($row = $result3->fetch_assoc()) {
+                            echo $row["aantal"];
+                        }?> </p>
                 </div>
 
             </div>
             <div class="sendweetjes">
-                <div class="sendweetjestitle middle"><p>Ingestuurde weetjes</p></div>
-                <div class="sendweetjesmain middle">
-                    ......
+                <div class="sendweetjestitle"><p>Ingestuurde weetjes</p></div>
+                <div class="sendweetjesmain">
+                    <div class="sendweetjesmaindp">
+                        <?php ingestuurdeWeetjes();?>
+                        </div>
+                    </div>
+                    <div class="sendweetjesmainmob">
+
+                    </div>
                 </div>
             </div>
         </div>

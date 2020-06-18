@@ -44,12 +44,6 @@ kalenderButton.addEventListener('click', () => {
         kalenderStatus = false;
     }
 });
-// function changeBackground(variable) {
-//     let img = variable;
-//     console.log(img);
-//
-//     const weetjePicca = document.querySelector('.weetje');
-//     weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
-// }
+
 
 
