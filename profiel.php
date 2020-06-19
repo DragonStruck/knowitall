@@ -16,11 +16,6 @@ include "db_connection.php";
 $conn = connect();
 if(isset($_POST['verzenden'])) {
 
-
-
-
-
-
     $datum = htmlspecialchars($_POST["datum"]);
     $weetje = htmlspecialchars($_POST["weetje"]);
     $weetjeextra = htmlspecialchars($_POST["weetjeextra"]);
