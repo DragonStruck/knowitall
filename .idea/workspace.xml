@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5bac8667-6ff4-4c39-b465-c03d74dcc958" name="Default Changelist" comment="Fade in willekeurig weetje en profiel.css aangemaakt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/profiel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mainstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mainstyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/profiel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/willekeurig.php" beforeDir="false" afterPath="$PROJECT_DIR$/willekeurig.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,8 @@
       <workItem from="1592341359107" duration="562000" />
       <workItem from="1592377464737" duration="11419000" />
       <workItem from="1592428180197" duration="518000" />
-      <workItem from="1592468207778" duration="4522000" />
+      <workItem from="1592468207778" duration="6788000" />
+      <workItem from="1592557433964" duration="2401000" />
     </task>
     <task id="LOCAL-00001" summary="Willekeurig.php aangemaakt en menu links toegevoegd">
       <created>1591264433923</created>

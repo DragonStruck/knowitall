@@ -1,15 +1,15 @@
 <?php
 
 function connect() {
-//    $dbhost = "localhost";
-//    $dbuser = "root";
-//    $dbpass = "";
-//    $db = "knowitall";
-
     $dbhost = "localhost";
-    $dbuser = "student4a9_544194";
-    $dbpass = "DjWzUE";
-    $db = "student4a9_544194";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "knowitall";
+//
+//    $dbhost = "localhost";
+//    $dbuser = "student4a9_544194";
+//    $dbpass = "DjWzUE";
+//    $db = "student4a9_544194";
 
     static $conn = null;
 

@@ -9,6 +9,7 @@ menuButton.addEventListener('click', () => {
     console.log(menuStatus);
     if (menuStatus == false) {
 
+        document.getElementById("menubody").style.display = "block";
         document.getElementById("menuLinkContainer").style.display = "block";
         menuBody.classList.add('change');
         openMenu.classList.remove('visible');
@@ -20,6 +21,7 @@ menuButton.addEventListener('click', () => {
         closeMenu.classList.remove('visible');
         openMenu.classList.add('visible');
         menuStatus = false;
+        document.getElementById("menubody").style.display = "none";
         document.getElementById("menuLinkContainer").style.display = "none";
     }
 });

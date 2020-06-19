@@ -3,13 +3,22 @@
 
     if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 
+        include "db_connection.php";
         $conn = connect();
         $username = $_SESSION["username"];
-        $query = "SELECT `admin` FROM `weetje` WHERE gebruiker = '$username'";
+        $query = "SELECT `admin` FROM `gebruiker` WHERE naam = '$username'";
         $result = $conn->query($query);
-        switch ($result) {
-            case "0":
 
+        if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $admin = $row["admin"];
+        }
+        }
+
+        switch ($admin) {
+            case "0":
+                header("location: profiel.php");
                 break;
             case "1":
 
@@ -27,7 +36,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewp       ort" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b39d5eccc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/mainstyle.css">
     <link rel="stylesheet" href="./css/weetjes.css">

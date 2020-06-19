@@ -54,6 +54,7 @@ header {
     z-index: 5;
     position: absolute;
     transition: 0.5s;
+    display: none;
 }
 
 .menu-button {
