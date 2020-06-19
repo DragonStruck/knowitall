@@ -5,7 +5,7 @@
 
         $conn = connect();
         $username = $_SESSION["username"];
-        $query = "SELECT `admin` FROM `weetje` WHERE gebruiker = '$username' ORDER BY ID DESC LIMIT 4";
+        $query = "SELECT `admin` FROM `weetje` WHERE gebruiker = '$username'";
         $result = $conn->query($query);
         switch ($result) {
             case "0":
