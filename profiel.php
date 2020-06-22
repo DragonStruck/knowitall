@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
@@ -6,6 +7,7 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
     header("location: login.php");
 }
 $username = $_SESSION["username"];
+
 
 
 //    $dbhost = "localhost";
@@ -87,7 +89,19 @@ function ingestuurdeWeetjes()
                         </div>';
     }
 }
+function checkAdmin()
+{
+    $conn = connect();
+    $username = $_SESSION["username"];
+    $sql3 = "SELECT admin FROM `gebruiker` WHERE naam = '$username'";
+    $result3 = $conn->query($sql3);
+    while ($row = $result3->fetch_assoc()) {
 
+        if ($row["admin"] == 1) {
+            echo "<a href=\"admin.php\" id=\"admin2\">Admin</a>";
+        }
+    }
+}
 
 
 
@@ -124,6 +138,7 @@ function ingestuurdeWeetjes()
             <a class="menuLinks menuactive" href="index.php" id="top">Home</a>
             <a class="menuLinks" href="willekeurig.php">Willekeurig weetje</a>
             <a class="menuLinks" href="profiel.php">Profiel</a>
+            <a class="menuLinks" id="admin1" href="admin.php">Admin</a>
         </div>
     </div>
 
@@ -134,6 +149,10 @@ function ingestuurdeWeetjes()
             <a href="index.php">Home</a>
             <a href="willekeurig.php">Willekeurig Weetje</a>
             <a href="profiel.php">Profiel</a>
+            <?php
+            checkAdmin();
+            ?>
+
         </div>
     </header>
 
@@ -172,7 +191,9 @@ function ingestuurdeWeetjes()
                 <div class="sendweetjestitle"><p>Ingestuurde weetjes</p></div>
                 <div class="sendweetjesmain">
                     <div class="sendweetjesmaindp">
-                        <?php ingestuurdeWeetjes();?>
+                        <?php
+                        ingestuurdeWeetjes();
+                        ?>
                         </div>
                     </div>
                     <div class="sendweetjesmainmob">
@@ -203,6 +224,7 @@ function ingestuurdeWeetjes()
 
     </main>
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>

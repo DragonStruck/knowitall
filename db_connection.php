@@ -8,6 +8,7 @@
         weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
     }
 
+
 </script>
 <?php
 
@@ -16,7 +17,7 @@ function connect() {
     $dbuser = "root";
     $dbpass = "";
     $db = "knowitall";
-
+//
 //    $dbhost = "localhost";
 //    $dbuser = "student4a9_544194";
 //    $dbpass = "DjWzUE";
