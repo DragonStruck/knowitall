@@ -5,13 +5,11 @@ if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
 } else {
     header("location: login.php");
 }
+
+
+
 $username = $_SESSION["username"];
 
-
-//    $dbhost = "localhost";
-//    $dbuser = "student4a9_544194";
-//    $dbpass = "DjWzUE";
-//    $db = "student4a9_544194";
 include "db_connection.php";
 $conn = connect();
 if(isset($_POST['verzenden'])) {
@@ -22,15 +20,14 @@ if(isset($_POST['verzenden'])) {
 
 //    Afbeelding
 
-
     $image = $_FILES['image']['name'];
     $imageFileType = strtolower(pathinfo($image,PATHINFO_EXTENSION));
     $filename = rand(0, 10000).".".$imageFileType;
     $target = "weetjeimg/".$filename;
     $uploadOk = 1;
 
-
 //    Kijken of het een afbeelding is
+
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
         $uploadOk = 1;
@@ -67,11 +64,6 @@ if(isset($_POST['verzenden'])) {
 //Ingestuurde weetjes
 function ingestuurdeWeetjes()
 {
-
-//    $dbhost = "localhost";
-//    $dbuser = "student4a9_544194";
-//    $dbpass = "DjWzUE";
-//    $db = "student4a9_544194";
     $conn = connect();
     $username = $_SESSION["username"];
     $sql3 = "SELECT * FROM `weetje` WHERE gebruiker = '$username' ORDER BY ID DESC LIMIT 4";
@@ -87,11 +79,6 @@ function ingestuurdeWeetjes()
                         </div>';
     }
 }
-
-
-
-
-
 ?>
 
 <!doctype html>

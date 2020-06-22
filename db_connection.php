@@ -13,14 +13,9 @@
 
 function connect() {
     $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $db = "knowitall";
-
-//    $dbhost = "localhost";
-//    $dbuser = "student4a9_544194";
-//    $dbpass = "DjWzUE";
-//    $db = "student4a9_544194";
+    $dbuser = "student4a9_544194";
+    $dbpass = "DjWzUE";
+    $db = "student4a9_544194";
 
     static $conn = null;
 
@@ -205,20 +200,11 @@ function CheckUser($username, $password) {
 
 function keurWeetje()
 {
-
-
     $conn = connect();
 
     $query = "SELECT * FROM weetje WHERE status = 'ongekeurd' LIMIT 1";
     $result = $conn->query($query);
 
-//    if($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = $id")) {
-//        if ($result2->num_rows > 0) {
-//            while ($row = $result2->fetch_assoc()) {
-//                mail($row["e-mail"],"KnowItAll: Weetje", "Je weetje is goedgekeurd");
-//            }
-//        }
-//    }
     //delete row on button click
     if(isset($_GET["del"])){
         $id = $_GET["del"];
@@ -261,25 +247,15 @@ function keurWeetje()
     } else {
         echo "Geen resultaten";
     }
-
-
 }
+
 function keurWeetjeDP()
 {
-
-
     $conn = connect();
 
     $query = "SELECT * FROM weetje WHERE status = 'ongekeurd' LIMIT 4";
     $result = $conn->query($query);
 
-//    if($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = $id")) {
-//        if ($result2->num_rows > 0) {
-//            while ($row = $result2->fetch_assoc()) {
-//                mail($row["e-mail"],"KnowItAll: Weetje", "Je weetje is goedgekeurd");
-//            }
-//        }
-//    }
     //delete row on button click
     if(isset($_GET["del"])){
         $id = $_GET["del"];
@@ -326,18 +302,15 @@ function keurWeetjeDP()
     } else {
         echo "Geen resultaten";
     }
-
-
 }
+
 function GebruikerView()
 {
-
-
     $conn = connect();
 
     $query = "SELECT ID,naam FROM gebruiker;";
     $result = $conn->query($query);
-//
+
     if(isset($_GET["del"])){
         $id = $_GET["del"];
         if($conn->query("DELETE FROM gebruiker WHERE ID=$id")){
@@ -346,18 +319,6 @@ function GebruikerView()
             echo "Failed to delete.";
         }
     }
-//    if(isset($_GET["upd"])){
-//        $id = $_GET["upd"];
-//        if($conn->query("
-//    UPDATE weetje
-//    SET status = 'goedgekeurd'
-//    WHERE ID=$id")){
-//            header('Location: admin.php');
-//
-//        } else {
-//            echo "Failed to delete.";
-//        }
-//    }
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -372,6 +333,5 @@ function GebruikerView()
         echo "Geen resultaten";
     }
     $conn->close();
-
 }
 ?>

@@ -41,7 +41,6 @@ if (isset($_POST["action"])) {
 }
 
 
-
 $sbmtmsg = "Login";
 $postact = "login";
 $nga = <<< DATA

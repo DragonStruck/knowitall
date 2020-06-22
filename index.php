@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="./css/mainstyle.css">
     <link rel="stylesheet" href="./css/weetjes.css">
 
-
-
     <link rel="icon" href="img/logo.ico">
 
     <title>Know It All</title>

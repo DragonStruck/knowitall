@@ -93,15 +93,8 @@
             <div class="adminusers" style="margin-left: 200px">
                 <p>Gebruikers:</p>
                 <?php
-                GebruikerView()
+                GebruikerView();
                 ?>
-
-
-
-
-
-
-
             </div>
         </div>.
 
