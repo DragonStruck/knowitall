@@ -36,7 +36,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewp       ort" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b39d5eccc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/mainstyle.css">
     <link rel="stylesheet" href="./css/weetjes.css">
@@ -50,7 +50,6 @@
 </head>
 
 <body>
-<i class="fa fa-upload " id="upload" aria-hidden="true"></i>
 <div id="menu-button" class="menu-button">
     <i id="open-menu" class="hamburger fas fa-bars visible"></i>
     <i id="close-menu" class="hamburger fas fa-times"></i>
@@ -72,7 +71,17 @@
         <a href="profiel.php">Profiel</a>
     </div>
 </header>
+
 <main class="main">
+    <div class="admincontainer">
+        <div class="welkomadmin">Admin pagina</div>
+        <div class="adminkeurweetje">
+            <?php
+            keurWeetje();
+            ?>
+        </div>
+        <div class="adminusers"></div>
+    </div>
 
 </main>
 <script src="./js/main.js"></script>

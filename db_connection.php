@@ -1,3 +1,14 @@
+
+<script>
+    function changeBackground(variable) {
+        let img = variable;
+        console.log(img);
+
+        const weetjePicca = document.querySelector('.weetje');
+        weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
+    }
+
+</script>
 <?php
 
 function connect() {
@@ -5,7 +16,7 @@ function connect() {
     $dbuser = "root";
     $dbpass = "";
     $db = "knowitall";
-//
+
 //    $dbhost = "localhost";
 //    $dbuser = "student4a9_544194";
 //    $dbpass = "DjWzUE";
@@ -191,14 +202,69 @@ function CheckUser($username, $password) {
     }
     return $result;
 }
-?>
-<script>
-    function changeBackground(variable) {
-        let img = variable;
-        console.log(img);
 
-        const weetjePicca = document.querySelector('.weetje');
-        weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
+function keurWeetje()
+{
+
+
     }
 
-</script>
+    $conn = connect();
+
+    $query = "SELECT * FROM weetje WHERE status = 'ongekeurd' LIMIT 1";
+    $result = $conn->query($query);
+
+
+    //delete row on button click
+    if(isset($_GET["del"])){
+        $id = $_GET["del"];
+        if($conn->query("DELETE FROM weetje WHERE ID=$id")){
+            header('Location: admin.php');
+        } else {
+            echo "Failed to delete.";
+        }
+    }
+    if(isset($_GET["upd"])){
+        $id = $_GET["upd"];
+        if($conn->query("    
+    UPDATE weetje
+    SET status = 'goedgekeurd'
+    WHERE ID=$id")){
+            if($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = 47")) {
+                if ($result2->num_rows > 0) {
+                    while ($row = $result2->fetch_assoc()) {
+//                        mail($row["e-mail"],"KnowItAll: Weetje", "Je weetje is goedgekeurd");
+                    }
+                }
+            header('Location: admin.php');
+
+        } else {
+            echo "Failed to delete.";
+        }
+    }
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo '<div class="weetje" style="width: 85vw; height: auto">
+            <h2 class="weetjedatum">'.$row["datum"] .'</h2>
+            <h3 class="weetjeintro">'.$row["weetje"].'</h3>
+        </div>
+        <div class="weetjeextra" style="width: 85vw" >
+            <p class="weetjetekst">'.$row["extra"].'</p>
+        </div>
+        <div class="buttoncontainer">
+            <div class="keurbutton"><a href="admin.php?upd='.$row["ID"].'">Weetje goedkeuren</a></div>
+            <div class="keurbutton"><a href="admin.php?del='.$row["ID"].'">Weetje afkeuren</a></div>
+        </div>
+        ';
+            echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
+        }
+    } else {
+        echo "Geen resultaten";
+    }
+    $conn->close();
+
+}
+?>
+

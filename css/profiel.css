@@ -133,7 +133,46 @@
     width: 100vw;
 }
 
+/*Admin*/
+.welkomadmin {
+    width: 90vw;
+    height: auto;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
 
+}
+.adminkeurweetje {
+    width: 90vw;
+    height: 500px;
+    background-color: rgb(65, 179, 164);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.admincontainer {
+    display: flex;
+    flex-direction: column;
+}
+.keurbutton {
+    width: 80vw;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.keurbutton a {
+    color: black;
+    text-decoration: none;
+}
 @media only screen and (min-width: 768px) {
     .fa-upload {
         display: none;

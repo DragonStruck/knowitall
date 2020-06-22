@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -42,8 +43,8 @@
 
     <main class="main">
     <?php
-    include "db_connection.php";
-    openCon();
+        include_once "db_connection.php";
+        openCon();
     ?>
     </main>
     <script src="./js/main.js"></script>
