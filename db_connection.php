@@ -8,6 +8,7 @@
         weetjePicca.style.backgroundImage = `url(./weetjeimg/${img})`;
     }
 
+
 </script>
 <?php
 
