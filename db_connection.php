@@ -17,7 +17,6 @@ function connect() {
     $dbuser = "student4a9_544194";
     $dbpass = "DjWzUE";
     $db = "student4a9_544194";
-
     static $conn = null;
 
     if (!isset($conn)) {
@@ -286,7 +285,7 @@ function keurWeetjeDP()
                     <div class="keurweetjedpinfo">
                         <p class="keurweetjedatum">Datum: '.$row["datum"] .'</p>
                         <p class="keurweetjeweetje">'.$row["weetje"].'</p>
-                        <p class="keurweetjegebruiker">Gebruiker: '.$row["gebruiker"].'</p>
+                        <div class="keurweetjegebruiker"><p class="keurweetjetest">'.$row["gebruiker"].'</p></div>
 
                     </div>
                     <div class="keurweetjedpkeur">

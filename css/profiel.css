@@ -47,7 +47,8 @@
 .informationbody {
     font-size: .7rem;
     width: 95%;
-    height: 125px;
+    height: auto;
+    min-height: 125px;
     margin: 10px auto;
     padding: 10px;
     border: 0;
@@ -133,7 +134,6 @@
 .mobileform {
     display: block;
     position: absolute;
-    width: 100vw;
 }
 
 /*Admin*/
@@ -316,7 +316,8 @@
     }
     .keurweetjedpinfo {
         width: 80%;
-        height: 140px;
+        height: auto;
+        min-height: 140px;
         background-color: white;
         border-radius: 15px;
         display: inline-grid;
@@ -347,12 +348,14 @@
     }
     .keurweetjedatum {
         font-size: 1.2rem;
-        grid-column: 1/100;
+        grid-column: 1/50;
         grid-row: 1;
     }
     .keurweetjegebruiker {
         font-size: 1.2rem;
         grid-row: 1;
+        grid-column: 70/100;
+        float: right;
     }
     .keurweetjeafbeelding {
         padding: 2px;
@@ -362,6 +365,10 @@
         margin-top: 10px;
         color: black;
         text-decoration: none;
+    }
+    .keurweetjetest {
+        position: relative;
+        float: right;
     }
     .keurweetjeafbeelding:hover{
         background: gray;

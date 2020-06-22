@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (isset($_SESSION["isIngelogd"]) && $_SESSION["isIngelogd"] == session_id()) {
@@ -26,20 +27,7 @@ if(isset($_POST['verzenden'])) {
     $target = "weetjeimg/".$filename;
     $uploadOk = 1;
 
-//    Kijken of het een afbeelding is
 
-    $check = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check !== false) {
-        $uploadOk = 1;
-    } else {
-        echo "<script>alert('Het bestand is geen afbeelding')</script>";
-        $uploadOk = 0;
-    }
-    // Als bestand te groot is
-    if ($_FILES["image"]["size"] > 500000) {
-        echo "<script>alert('Het bestand is te groot')</script>";
-        $uploadOk = 0;
-    }
     // Formaat
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
         echo "<script>alert('Verboden file type')</script>";
@@ -116,6 +104,7 @@ function checkAdmin()
 
 <body>
 <i class="fa fa-upload " id="upload" aria-hidden="true"></i>
+
     <div id="menu-button" class="menu-button">
         <i id="open-menu" class="hamburger fas fa-bars visible"></i>
         <i id="close-menu" class="hamburger fas fa-times"></i>
@@ -184,7 +173,7 @@ function checkAdmin()
             </div>
         </div>
         <div class="profielrechts" id="formbody">
-            <div class="weetjeinsturen">
+            <div class="weetjeinsturen" id="formbody2">
                 <form action="profiel.php" method="post" enctype="multipart/form-data">
                     <p style="text-align: center; font-size: 1.2em">Weetje insturen</p>
                     <label>Datum: </label><input class="submitform" name="datum" type="date">
@@ -206,5 +195,27 @@ function checkAdmin()
     <script src="./js/main.js"></script>
 
 </body>
+<script>
+    const formButton = document.querySelector('#upload');
+    const formBody = document.querySelector('#formbody');
+    const formBody2 = document.querySelector('#formbody2');
 
+    let formStatus = false;
+
+    formButton.addEventListener('click', () => {
+        console.log("sdfw");
+        if (formStatus == false) {
+            // formBody.style.display = "block"
+            // formBody.style.position = "absolute"
+            formBody2.style.width = "100vw"
+            formBody.classList.add('mobileform')
+
+
+            formStatus = true;
+        } else if (formStatus == true) {
+            formBody.classList.remove('mobileform')
+            formStatus = false;
+        }
+    });
+</script>
 </html>
