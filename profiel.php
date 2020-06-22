@@ -94,12 +94,9 @@ function checkAdmin()
     <link rel="stylesheet" href="./css/mainstyle.css">
     <link rel="stylesheet" href="./css/weetjes.css">
     <link rel="stylesheet" href="./css/profiel.css">
-
-
-
     <link rel="icon" href="img/logo.ico">
-
     <title>Know It All</title>
+
 </head>
 
 <body>
@@ -173,8 +170,19 @@ function checkAdmin()
             </div>
         </div>
         <div class="profielrechts" id="formbody">
+            <script>function validateForm() {
+                    var datum = document.forms["insturenform"]["datum"].value;
+                    var weetje = document.forms["insturenform"]["weetje"].value;
+                    if (datum == "") {
+                        alert("Datum moet ingevuld zijn");
+                        return false;
+                    } else if (weetje == "") {
+                        alert("Weetje moet ingevuld zijn");
+                        return false;
+                    }
+                }</script>
             <div class="weetjeinsturen" id="formbody2">
-                <form action="profiel.php" method="post" enctype="multipart/form-data">
+                <form name="insturenform" action="profiel.php" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
                     <p style="text-align: center; font-size: 1.2em">Weetje insturen</p>
                     <label>Datum: </label><input class="submitform" name="datum" type="date">
                     <textarea class="textareamedium" name="weetje" placeholder="Vul hier je weetje in"></textarea>
@@ -192,7 +200,7 @@ function checkAdmin()
         </div>
 
     </main>
-    <script src="./js/main.js"></script>
+<script src="./js/main.js"></script>
 
 </body>
 <script>
@@ -217,5 +225,6 @@ function checkAdmin()
             formStatus = false;
         }
     });
+
 </script>
 </html>

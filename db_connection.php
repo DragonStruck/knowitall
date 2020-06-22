@@ -17,6 +17,7 @@ function connect() {
     $dbuser = "student4a9_544194";
     $dbpass = "DjWzUE";
     $db = "student4a9_544194";
+
     static $conn = null;
 
     if (!isset($conn)) {

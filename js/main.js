@@ -47,6 +47,9 @@ kalenderButton.addEventListener('click', () => {
     }
 });
 
+//Javascript validation
+
+
 
 
 
