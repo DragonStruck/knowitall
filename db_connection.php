@@ -227,7 +227,7 @@ function keurWeetje()
     UPDATE weetje
     SET status = 'goedgekeurd'
     WHERE ID=$id")) {
-            if ($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = 47")) {
+            if ($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = $id")) {
                 if ($result2->num_rows > 0) {
                     while ($row = $result2->fetch_assoc()) {
 //                        mail($row["e-mail"],"KnowItAll: Weetje", "Je weetje is goedgekeurd");

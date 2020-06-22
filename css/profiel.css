@@ -156,6 +156,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.admincontainerdp {
+    display: none;
+}
 .keurbutton {
     width: 80vw;
     height: auto;
@@ -273,4 +277,27 @@
         z-index: 100;
         border-radius: 15px;
     }
+    .adminkeurweetje {
+        width: 50vw;
+    }
+    .adminusers{
+        width: 20vw;
+        height: 500px;
+        background-color: rgb(65, 179, 164);
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+    .admincontainer {
+        display: none;
+    }
+    .admincontainerdp {
+        display: flex;
+        flex-direction: column;
+    }
+    .admincontainerdp2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
 }

@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/profiel.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/profiel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,8 @@
       <workItem from="1592468207778" duration="6788000" />
       <workItem from="1592557433964" duration="4414000" />
       <workItem from="1592733674278" duration="1376000" />
-      <workItem from="1592811420296" duration="4877000" />
+      <workItem from="1592811420296" duration="6373000" />
+      <workItem from="1592817804589" duration="193000" />
     </task>
     <task id="LOCAL-00001" summary="Willekeurig.php aangemaakt en menu links toegevoegd">
       <created>1591264433923</created>
