@@ -167,10 +167,10 @@ header {
     margin: 20px auto;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 875px) {
     .title {
         text-align: center;
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: bold;
     }
 

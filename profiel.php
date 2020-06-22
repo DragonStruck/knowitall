@@ -14,7 +14,7 @@ include "db_connection.php";
 $conn = connect();
 if(isset($_POST['verzenden'])) {
 
-    $datum = htmlspecialchars($_POST["datum"]);
+    $datum = $_POST["datum"];
     $weetje = htmlspecialchars($_POST["weetje"]);
     $weetjeextra = htmlspecialchars($_POST["weetjeextra"]);
 
@@ -66,7 +66,7 @@ function ingestuurdeWeetjes()
 {
     $conn = connect();
     $username = $_SESSION["username"];
-    $sql3 = "SELECT * FROM `weetje` WHERE gebruiker = '$username' ORDER BY ID DESC LIMIT 4";
+    $sql3 = "SELECT * FROM `weetje` WHERE gebruiker = '$username' ORDER BY ID DESC";
     $result3 = $conn->query($sql3);
     while ($row = $result3->fetch_assoc()) {
         echo '<div class="weetjecontainer">
@@ -197,8 +197,7 @@ function checkAdmin()
                         <a style="font-size: .8em; border: 1px solid black; padding: 2px">Bladeren</a>
                     </label>
 
-                    <input type="submit" class="voorbeeldbutton" name="voorbeeld" value="Voorbeeld">
-                    <input type="submit" class="submitbutton" name="verzenden">
+                    <input type="submit" class="submitbutton" name="verzenden" value="Verzenden">
                 </form>
             </div>
         </div>

@@ -90,13 +90,13 @@
                keurWeetjeDP();
                ?>
             </div>
-            <div class="adminusers" style="margin-left: 200px">
+            <div class="adminusers">
                 <p>Gebruikers:</p>
                 <?php
                 GebruikerView();
                 ?>
             </div>
-        </div>.
+        </div>
 
     </div>
 
