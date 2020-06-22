@@ -215,7 +215,7 @@ function keurWeetje()
     //delete row on button click
     if (isset($_GET["del"])) {
         $id = $_GET["del"];
-        if ($conn->query("DELETE FROM weetje WHERE ID=$id")) {
+        if ($conn->query("DELETE FROM weetje WHERE ID='$id'")) {
             header('Location: admin.php');
         } else {
             echo "Failed to delete.";
@@ -223,11 +223,8 @@ function keurWeetje()
     }
     if (isset($_GET["upd"])) {
         $id = $_GET["upd"];
-        if ($conn->query("    
-    UPDATE weetje
-    SET status = 'goedgekeurd'
-    WHERE ID=$id")) {
-            if ($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = 47")) {
+        if ($conn->query("UPDATE weetje SET status = 'goedgekeurd' WHERE ID='$id'")) {
+            if ($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = '$id'")) {
                 if ($result2->num_rows > 0) {
                     while ($row = $result2->fetch_assoc()) {
 //                        mail($row["e-mail"],"KnowItAll: Weetje", "Je weetje is goedgekeurd");
