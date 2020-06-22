@@ -326,6 +326,51 @@ function keurWeetjeDP()
     } else {
         echo "Geen resultaten";
     }
+
+
+}
+function GebruikerView()
+{
+
+
+    $conn = connect();
+
+    $query = "SELECT ID,naam FROM gebruiker;";
+    $result = $conn->query($query);
+//
+    if(isset($_GET["del"])){
+        $id = $_GET["del"];
+        if($conn->query("DELETE FROM gebruiker WHERE ID=$id")){
+            header('Location: admin.php');
+        } else {
+            echo "Failed to delete.";
+        }
+    }
+//    if(isset($_GET["upd"])){
+//        $id = $_GET["upd"];
+//        if($conn->query("
+//    UPDATE weetje
+//    SET status = 'goedgekeurd'
+//    WHERE ID=$id")){
+//            header('Location: admin.php');
+//
+//        } else {
+//            echo "Failed to delete.";
+//        }
+//    }
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo '                
+                <div class="adminusername">
+                    <span>'.$row["naam"].'</span>
+                    <a href="admin.php?del='.$row["ID"].'"><i class="fas fa-ban"></i></a>
+                </div>';
+        }
+    } else {
+        echo "Geen resultaten";
+    }
     $conn->close();
 
 }

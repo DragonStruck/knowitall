@@ -372,6 +372,28 @@
         color: red;
 
     }
+    .adminusername {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        background-color: white;
+        border-radius: 15px;
+        margin-top: 10px;
+
+
+    }
+    .adminusers {
+        display: flex;
+        flex-direction: column;
+    }
+    .fa-ban {
+        left: 90%;
+        position: absolute;
+        color: black;
+    }
+    .fa-ban:hover {
+        color: red;
+    }
 
 
 
