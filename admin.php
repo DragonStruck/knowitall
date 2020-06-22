@@ -77,7 +77,6 @@
         <div class="welkomadmin">Admin pagina</div>
         <div class="adminkeurweetje">
             <?php
-            include_once "db_connection.php";
             keurWeetje();
             ?>
         </div>
@@ -86,15 +85,13 @@
     <div class="admincontainerdp">
         <div class="welkomadmin">Admin pagina</div>
         <div class="admincontainerdp2">
-            <div class="adminkeurweetje" >
-                <?php
-                include_once "db_connection.php";
-                keurWeetje();
-                ?>
+            <div class="adminkeurweetje">
+               <?php
+               keurWeetjeDP();
+               ?>
             </div>
             <div class="adminusers" style="margin-left: 200px"></div>
-        </div>
-        <div class=""></div>
+        </div>.
 
     </div>
 

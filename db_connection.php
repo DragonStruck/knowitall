@@ -261,6 +261,71 @@ function keurWeetje()
     } else {
         echo "Geen resultaten";
     }
+
+
+}
+function keurWeetjeDP()
+{
+
+
+    $conn = connect();
+
+    $query = "SELECT * FROM weetje WHERE status = 'ongekeurd' LIMIT 4";
+    $result = $conn->query($query);
+
+//    if($result2 = $conn->query("SELECT gebruiker.`e-mail` from gebruiker INNER JOIN weetje ON gebruiker.naam = weetje.gebruiker WHERE weetje.ID = $id")) {
+//        if ($result2->num_rows > 0) {
+//            while ($row = $result2->fetch_assoc()) {
+//                mail($row["e-mail"],"KnowItAll: Weetje", "Je weetje is goedgekeurd");
+//            }
+//        }
+//    }
+    //delete row on button click
+    if(isset($_GET["del"])){
+        $id = $_GET["del"];
+        if($conn->query("DELETE FROM weetje WHERE ID=$id")){
+            header('Location: admin.php');
+        } else {
+            echo "Failed to delete.";
+        }
+    }
+    if(isset($_GET["upd"])){
+        $id = $_GET["upd"];
+        if($conn->query("    
+    UPDATE weetje
+    SET status = 'goedgekeurd'
+    WHERE ID=$id")){
+            header('Location: admin.php');
+
+        } else {
+            echo "Failed to delete.";
+        }
+    }
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo ' <div class="keurweetjedp">
+                    <div class="keurweetjedpinfo">
+                        <p class="keurweetjedatum">Datum: '.$row["datum"] .'</p>
+                        <p class="keurweetjeweetje">'.$row["weetje"].'</p>
+                        <p class="keurweetjegebruiker">Gebruiker: '.$row["gebruiker"].'</p>
+
+                    </div>
+                    <div class="keurweetjedpkeur">
+                        <div class="keurweetjebuttons">
+                          <a href="admin.php?upd='.$row["ID"].'"><i class="fas fa-check-circle"></a></i>
+                            <a href="admin.php?del='.$row["ID"].'"><i class="fas fa-times-circle"></a></i>
+                        </div>
+                       <a class="keurweetjeafbeelding" href="weetjeimg/'.$row["afbeelding"].'" target="_blank"><span>Afbeelding</span></a>
+                    </div>
+                </div>
+        ';
+            echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
+        }
+    } else {
+        echo "Geen resultaten";
+    }
     $conn->close();
 
 }
