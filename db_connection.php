@@ -52,8 +52,7 @@ function OpenCon(){
                 echo "<script>changeBackground(`".$row['afbeelding']."`);</script>";
         }
     } else {
-
-
+        
         $query = "SELECT * FROM weetje WHERE status = 'goedgekeurd' ORDER BY RAND() LIMIT 1;";
         $result = $conn->query($query);
 
