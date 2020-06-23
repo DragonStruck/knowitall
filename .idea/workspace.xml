@@ -4,8 +4,6 @@
     <list default="true" id="5bac8667-6ff4-4c39-b465-c03d74dcc958" name="Default Changelist" comment="Fade in willekeurig weetje en profiel.css aangemaakt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/profiel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +80,7 @@
       <workItem from="1592817804589" duration="11373000" />
       <workItem from="1592847923551" duration="4287000" />
       <workItem from="1592857284201" duration="1358000" />
+      <workItem from="1592900917319" duration="888000" />
     </task>
     <task id="LOCAL-00001" summary="Willekeurig.php aangemaakt en menu links toegevoegd">
       <created>1591264433923</created>

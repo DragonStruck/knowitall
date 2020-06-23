@@ -111,7 +111,7 @@ function OpenRandomCon(){
 function OpenDateCon($kalenderdatum){
     $conn = connect();
 
-    $query = "SELECT * FROM weetje WHERE datum = '".$kalenderdatum."' AND status = 'goedgekeurd' ORDER BY RAND() LIMIT 1";
+    $query = "SELECT * FROM weetje WHERE MONTH(datum) = MONTH('".$kalenderdatum."') AND DAY(datum) = day('".$kalenderdatum."') AND status = 'goedgekeurd' ORDER BY RAND() LIMIT 1";
     $result = $conn->query($query);
 
 
